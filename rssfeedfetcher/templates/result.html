@@ -1,0 +1,12 @@
+{% extends "index.html" %}
+{% block content %}
+{% for item in value  %}
+
+<ul>
+	<li> {{ item.title }} </li>
+	<li> {{ item.description }}  </li>  
+
+</ul>
+
+{% endfor %}
+{% endblock %}
