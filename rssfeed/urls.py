@@ -21,6 +21,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	url(r'^$', 'rssfeedfetcher.views.home', name='home'),
-
+	url(r'^result/$', 'rssfeedfetcher.views.result', name='result'),
+	url(r'^result/(?P<url_id>[0-9]+)$', 'rssfeedfetcher.views.result', name='result'),
     url(r'^admin/', include(admin.site.urls)),
 )

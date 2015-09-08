@@ -6,8 +6,11 @@
 <body>
 <form method="POST", action='' >{% csrf_token %}
 {{form.as_p}}
- <input type="submit">
+ <input type="submit">	  
 <div> {% block content %} {% endblock %}</div>
+{% for i in obj %}
+<div><a href="{% url 'result' i.id %}">{{ i.url }}</a></div>
+{% endfor %}
 </form>
 </body>
 </html>
