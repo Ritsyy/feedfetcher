@@ -6,7 +6,10 @@ def feeddata(url):
 	page = urllib2.urlopen(url)
 	soup = BeautifulSoup(page)
 	link = soup.find('link', type='application/rss+xml')
-	feed = feedparser.parse( link['href'] )
+	if link:
+		feed = feedparser.parse( link['href'] )
+	else:
+		feed = feedparser.parse( url )
 	# print feed["items"]
 	# print feed
 	return feed["items"]
