@@ -27,7 +27,6 @@ def result(request, url_id):
 	print url_id
 	obj = feedUrl.objects.get(pk=url_id)
 	url = obj.url
-	print url
 	value = feeddata(url)
 	for i in value:
 		i["description"] = BeautifulSoup(i["description"]).text
