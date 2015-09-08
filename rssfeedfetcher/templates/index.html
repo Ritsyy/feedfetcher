@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>url</title>
-</head>
-<body>
-<form method="POST", action='' >{% csrf_token %}
+{% extends "base.html" %}
+
+{% block content %}
 <h2>Enter the Url for the latest Feeds.</h2>
+<form method="POST", action='' >{% csrf_token %}
 {{form.as_p}}
  <input type="submit">	  
-<div> {% block content %} {% endblock %}</div>
+</form>
 {% for i in obj %}
 <div><a href="{% url 'result' i.id %}">{{ i.url }}</a></div>
 {% endfor %}
-</form>
-</body>
-</html>
+{% endblock %}

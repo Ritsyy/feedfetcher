@@ -16,8 +16,9 @@ def home(request):
 		save_it = form.save(commit = False)
 		url= save_it.url
 		save_it.save()
+		form = FeedUrlForm()
 		obj = feedUrl.objects.all()
-		return render_to_response("index.html", {'obj':obj}, context_instance = RequestContext(request))
+		return render_to_response("index.html", locals(), context_instance = RequestContext(request))
 
 	return render_to_response("index.html", locals(), context_instance = RequestContext(request))
 

@@ -1,12 +1,12 @@
-{% extends "index.html" %}
+{% extends "base.html" %}
 {% block content %}
+<a href="{% url 'home' %}">Add another Url</a>
 {% for item in value  %}
 
-<ul>
-	<li> {{ item.title }} </li>
-	<li> {{ item.description }}  </li>  
-
-</ul>
+<div>
+	<h1>{{ item.title }}</h1>
+	 {{ item.description }}
+</div>	 
 
 {% endfor %}
 {% endblock %}
