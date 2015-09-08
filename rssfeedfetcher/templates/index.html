@@ -5,6 +5,7 @@
 </head>
 <body>
 <form method="POST", action='' >{% csrf_token %}
+<h2>Enter the Url for the latest Feeds.</h2>
 {{form.as_p}}
  <input type="submit">	  
 <div> {% block content %} {% endblock %}</div>
